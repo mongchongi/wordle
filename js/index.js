@@ -83,6 +83,7 @@ const handleKeydown = (e) => {
   } else if (currentKey === 'ENTER' && keydownCount === 5) {
     handleEnterKey(words);
   } else if (currentKey === 'BACKSPACE') {
+    words.pop();
     handleDeleteKey();
   }
 };
@@ -103,6 +104,7 @@ const handleMousedown = (e) => {
     } else if (currentKey === 'ENTER' && keydownCount === 5) {
       handleEnterKey(words);
     } else if (currentKey === 'BACKSPACE') {
+      words.pop();
       handleDeleteKey();
     }
   }
