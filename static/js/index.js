@@ -1,4 +1,4 @@
-const answer = 'APPLE';
+// const answer = 'APPLE';
 
 let enterCount = 0;
 let keydownCount = 0;
@@ -7,13 +7,13 @@ let words = [];
 const gameClear = () => {
   window.removeEventListener('keydown', handleKeydown);
   window.removeEventListener('mousedown', handleMousedown);
-  console.log('GAME CLEAR!');
+  alert('GAME CLEAR!');
 };
 
 const gameOver = () => {
   window.removeEventListener('keydown', handleKeydown);
   window.removeEventListener('mousedown', handleMousedown);
-  console.log('GAME OVER!');
+  alert('GAME OVER!');
 };
 
 function nextLine() {
@@ -26,8 +26,11 @@ function nextLine() {
   }
 }
 
-const handleEnterKey = (words) => {
+const handleEnterKey = async (words) => {
   let answerCount = 0;
+  const response = await fetch('/answer');
+  const answerObject = await response.json();
+  const answer = answerObject.answer;
 
   for (let i = 0; i < answer.length; i++) {
     const wordBlock = document.querySelector(`.board-column[data-index="${enterCount}${i}"]`);
