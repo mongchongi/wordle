@@ -3,16 +3,19 @@
 let enterCount = 0;
 let keydownCount = 0;
 let words = [];
+let interval;
 
 const gameClear = () => {
   window.removeEventListener('keydown', handleKeydown);
   window.removeEventListener('mousedown', handleMousedown);
+  clearInterval(interval);
   alert('GAME CLEAR!');
 };
 
 const gameOver = () => {
   window.removeEventListener('keydown', handleKeydown);
   window.removeEventListener('mousedown', handleMousedown);
+  clearInterval(interval);
   alert('GAME OVER!');
 };
 
@@ -112,6 +115,23 @@ const handleMousedown = (e) => {
     }
   }
 };
+
+const startTimer = () => {
+  const startTime = new Date();
+
+  function setTime() {
+    const lastTime = new Date(new Date() - startTime);
+    const minute = lastTime.getMinutes().toString().padStart(2, 0);
+    const second = lastTime.getSeconds().toString().padStart(2, 0);
+
+    const timer = document.querySelector('.timer');
+    timer.innerText = `TIME : ${minute}:${second}`;
+  }
+
+  interval = setInterval(setTime, 1000);
+};
+
+startTimer();
 
 window.addEventListener('keydown', handleKeydown);
 window.addEventListener('mousedown', handleMousedown);
