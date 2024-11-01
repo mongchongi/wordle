@@ -1,0 +1,42 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 40px;
+}
+
+.keyboard-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.keyboard-column {
+  width: 55px;
+  height: 65px;
+  background: #767879;
+  color: white;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.keyboard-column:active {
+  background: #767879a0;
+}
+
+.wide {
+  width: 85px;
+}
+
+.keyboard-icon {
+  width: 20px;
+  height: 20px;
+}
