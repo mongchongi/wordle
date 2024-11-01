@@ -1,0 +1,27 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 40px;
+  color: #767879;
+  font-weight: bold;
+}
+
+.board-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.board-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border: 3px solid #767879;
+  font-size: 30px;
+}
