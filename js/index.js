@@ -5,10 +5,14 @@ let keydownCount = 0;
 let words = [];
 
 const gameClear = () => {
+  window.removeEventListener('keydown', handleKeydown);
+  window.removeEventListener('mousedown', handleMousedown);
   console.log('GAME CLEAR!');
 };
 
 const gameOver = () => {
+  window.removeEventListener('keydown', handleKeydown);
+  window.removeEventListener('mousedown', handleMousedown);
   console.log('GAME OVER!');
 };
 
@@ -17,7 +21,6 @@ function nextLine() {
   keydownCount = 0;
   words = [];
 
-  console.log(enterCount);
   if (enterCount === 6) {
     gameOver();
   }
